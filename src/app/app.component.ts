@@ -6,8 +6,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  nombres: string[] = [
-    'Luis Barriga',
-    'Juani Redondo'
+  titulos: string[] = [
+    'Mad Max - Fury Road',
+    'El padrino',
+    'Cantando bajo la lluvia',
+    'Los Vengadores',
+    'Guardianes de la Galaxia'
   ];
 }
