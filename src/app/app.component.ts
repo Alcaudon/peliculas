@@ -1,6 +1,7 @@
 import { strictEqual } from 'assert';
 import { Component, OnInit } from '@angular/core';
 import { PeliculasService } from './peliculas.service';
+import {Pelicula} from './pelicula';
 
 @Component({
   selector: 'app-root',
@@ -9,7 +10,7 @@ import { PeliculasService } from './peliculas.service';
 })
 export class AppComponent implements OnInit {
   title = 'Películas';
-  titulos: string[];
+  titulos: Pelicula[];
 
   constructor(private _peliculasService: PeliculasService) {
     console.log('Componente instanciado y servicio inyectado');
@@ -18,7 +19,7 @@ export class AppComponent implements OnInit {
   ngOnInit(): void {
     this.titulos = this._peliculasService.obtenerPeliculas();
   }
-  eliminarPelicula(titulo: string): void {
+  eliminarPelicula(titulo: Pelicula): void {
     this._peliculasService.eliminarPelicula(titulo);
     this.titulos = this._peliculasService.obtenerPeliculas();
   }

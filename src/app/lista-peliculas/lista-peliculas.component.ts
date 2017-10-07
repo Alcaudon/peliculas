@@ -1,5 +1,5 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
-
+import {Pelicula} from '../pelicula';
 @Component({
   selector: 'app-lista-peliculas',
   templateUrl: './lista-peliculas.component.html',
@@ -7,11 +7,11 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
 })
 export class ListaPeliculasComponent  {
 
- @Output() botonElininarPulsado = new EventEmitter <string> ();
+ @Output() botonElininarPulsado = new EventEmitter <Pelicula> ();
 
- @Input() peliculas: string[];
+ @Input() peliculas: Pelicula[];
 
- notificarEliminacionPelicula(pelicula: string): void {
+ notificarEliminacionPelicula(pelicula: Pelicula): void {
     this.botonElininarPulsado.emit(pelicula);
  }
 }

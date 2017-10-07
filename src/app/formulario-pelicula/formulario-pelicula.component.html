@@ -1,0 +1,15 @@
+<form
+  [formGroup]='formulario'
+  (ngSubmit)='guardarPelicula()'>
+  <div>
+    <label for="">Titulo</label>
+    <input type="text" formControlName='titulo'>
+  </div>
+  <div>
+    <label for="">Director</label>
+    <input type="text" formControlName='director'>
+  </div>
+  <div>
+    <button type='submit'>Guardar Película</button>
+  </div>
+</form>

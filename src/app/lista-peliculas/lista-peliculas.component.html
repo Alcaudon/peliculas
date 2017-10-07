@@ -1,6 +1,6 @@
 <ul>
   <li *ngFor="let pelicula of peliculas">
-    {{ pelicula }}
+    {{ pelicula.titulo }}
     <button (click)="notificarEliminacionPelicula(pelicula)">Eliminar</button>
   </li>
 </ul>
