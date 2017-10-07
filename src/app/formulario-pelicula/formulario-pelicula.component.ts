@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {FormGroup, FormBuilder } from '@angular/forms';
+import { FormBuilder, FormGroup, Validator, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-formulario-pelicula',
@@ -16,7 +16,7 @@ export class FormularioPeliculaComponent  {
 
    private crearFormulario(): void {
     this.formulario = this._formBuilder.group({
-      titulo: '',
+      titulo: ['', Validators.required],
       director: ''
     });
    }

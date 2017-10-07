@@ -5,11 +5,14 @@
     <label for="">Titulo</label>
     <input type="text" formControlName='titulo'>
   </div>
+  <span *ngIf="formulario.get('titulo').touched && formulario.get('titulo').invalid">
+    El título de la película es obligatorio
+  </span>
   <div>
     <label for="">Director</label>
     <input type="text" formControlName='director'>
   </div>
   <div>
-    <button type='submit'>Guardar Película</button>
+    <button type='submit' [disabled]='formulario.invalid'>Guardar Película</button>
   </div>
 </form>
