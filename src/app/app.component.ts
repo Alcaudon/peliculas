@@ -1,21 +1,25 @@
-import { Component } from '@angular/core';
+import { strictEqual } from 'assert';
+import { Component, OnInit } from '@angular/core';
+import { PeliculasService } from './peliculas.service';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   title = 'Películas';
-  titulos: string[] = [
-    'Mad Max - Fury Road',
-    'El padrino II',
-    'Cantando bajo la lluvia',
-    'Los Vengadores',
-    'Guardianes de la Galaxia'
-  ];
+  titulos: string[];
 
+  constructor(private _peliculasService: PeliculasService) {
+    console.log('Componente instanciado y servicio inyectado');
+  }
+
+  ngOnInit(): void {
+    this.titulos = this._peliculasService.obtenerPeliculas();
+  }
   eliminarPelicula(titulo: string): void {
-    this.titulos = this.titulos.filter(n => n !== titulo);
+    this._peliculasService.eliminarPelicula(titulo);
+    this.titulos = this._peliculasService.obtenerPeliculas();
   }
 }

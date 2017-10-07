@@ -4,6 +4,8 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { ListaPeliculasComponent } from './lista-peliculas/lista-peliculas.component';
 
+import { PeliculasService } from './peliculas.service';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -12,7 +14,7 @@ import { ListaPeliculasComponent } from './lista-peliculas/lista-peliculas.compo
   imports: [
     BrowserModule
   ],
-  providers: [],
+  providers: [PeliculasService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
