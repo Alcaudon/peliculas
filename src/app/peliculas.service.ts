@@ -1,3 +1,4 @@
+import { PercentPipe } from '@angular/common/src/pipes/number_pipe';
 import { Injectable } from '@angular/core';
 import {Pelicula} from './pelicula';
 
@@ -15,6 +16,10 @@ export class PeliculasService {
 
   obtenerPeliculas(): Pelicula[] {
     return this._titulos;
+  }
+
+  agregarPelicula(pelicula: Pelicula): void {
+    this._titulos.push(pelicula);
   }
 
   eliminarPelicula(titulo: Pelicula): void {

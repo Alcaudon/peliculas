@@ -1,6 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, Output, EventEmitter } from '@angular/core';
 import { FormBuilder, FormGroup, Validator, Validators } from '@angular/forms';
-
+import { Pelicula } from '../pelicula';
 @Component({
   selector: 'app-formulario-pelicula',
   templateUrl: './formulario-pelicula.component.html',
@@ -9,6 +9,7 @@ import { FormBuilder, FormGroup, Validator, Validators } from '@angular/forms';
 export class FormularioPeliculaComponent  {
 
   formulario: FormGroup;
+  @Output() botonGuardarPulsado = new EventEmitter<Pelicula>();
 
   constructor(private _formBuilder: FormBuilder) {
     this.crearFormulario();
@@ -21,8 +22,9 @@ export class FormularioPeliculaComponent  {
     });
    }
 
-   guardarPelicula(): void {
-    console.log(this.formulario.value);
+   notificarGuardadoPelicula(): void {
+    const pelicula: Pelicula = this.formulario.value as Pelicula;
+    this.botonGuardarPulsado.emit(pelicula);
    }
 
 }

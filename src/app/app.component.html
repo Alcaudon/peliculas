@@ -1,7 +1,8 @@
 <header>
   <h1>{{ title }}</h1>
 </header>
-<app-formulario-pelicula></app-formulario-pelicula>
+<app-formulario-pelicula
+(botonGuardarPulsado)='crearPelicula($event)'></app-formulario-pelicula>
 <app-lista-peliculas
 [peliculas]="titulos"
 (botonElininarPulsado)="eliminarPelicula($event)">

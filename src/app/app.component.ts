@@ -19,6 +19,11 @@ export class AppComponent implements OnInit {
   ngOnInit(): void {
     this.titulos = this._peliculasService.obtenerPeliculas();
   }
+  crearPelicula(pelicula: Pelicula): void {
+    this._peliculasService.agregarPelicula(pelicula);
+    this.titulos = this._peliculasService.obtenerPeliculas();
+  }
+
   eliminarPelicula(titulo: Pelicula): void {
     this._peliculasService.eliminarPelicula(titulo);
     this.titulos = this._peliculasService.obtenerPeliculas();
