@@ -7,16 +7,21 @@ import { ListaPeliculasComponent } from './lista-peliculas/lista-peliculas.compo
 
 import { PeliculasService } from './peliculas.service';
 import { FormularioPeliculaComponent } from './formulario-pelicula/formulario-pelicula.component';
-
+import { AppRoutingModule } from './app-routing/app-routing.module';
+import { RutaAComponent } from './ruta-a/ruta-a.component';
+import { RutaBComponent } from './ruta-b/ruta-b.component';
 @NgModule({
   declarations: [
     AppComponent,
     ListaPeliculasComponent,
-    FormularioPeliculaComponent
+    FormularioPeliculaComponent,
+    RutaAComponent,
+    RutaBComponent
   ],
   imports: [
     BrowserModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    AppRoutingModule
   ],
   providers: [PeliculasService],
   bootstrap: [AppComponent]
