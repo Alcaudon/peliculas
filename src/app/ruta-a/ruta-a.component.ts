@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {Pelicula} from '../pelicula';
+import { PeliculasService } from '../peliculas.service';
 
 @Component({
   selector: 'app-ruta-a',
@@ -7,9 +9,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RutaAComponent implements OnInit {
 
-  constructor() { }
+  titulos: Pelicula[];
 
-  ngOnInit() {
+  constructor(private _peliculasService: PeliculasService) { }
+
+  ngOnInit(): void {
+    this.titulos = this._peliculasService.obtenerPeliculas();
+  }
+
+  eliminarPelicula(titulo: Pelicula): void {
+    this._peliculasService.eliminarPelicula(titulo);
+    this.titulos = this._peliculasService.obtenerPeliculas();
   }
 
 }
