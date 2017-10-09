@@ -6,12 +6,12 @@ import {Pelicula} from './pelicula';
 export class PeliculasService {
 
   private _titulos: Pelicula[] = [
-    new Pelicula (1, 'Mad Max - Fury Road'),
-    new Pelicula (2, 'El padrino II'),
-    new Pelicula (3, 'Cantando bajo la lluvia'),
-    new Pelicula (4, 'Los Vengadores'),
-    new Pelicula (5, 'Guardianes de la Galaxia'),
-    new Pelicula (6, 'Spiderman HomeComming')
+    new Pelicula (1, 'Mad Max - Fury Road', 'George Miller'),
+    new Pelicula (2, 'El padrino II', 'Francis Ford Coppola'),
+    new Pelicula (3, 'Cantando bajo la lluvia', 'Gene Kelly y Stanley Donen'),
+    new Pelicula (4, 'Los Vengadores', 'Josh Wedon'),
+    new Pelicula (5, 'Guardianes de la Galaxia', 'James Gunn'),
+    new Pelicula (6, 'Spiderman HomeComing','Jon Watts')
   ];
 
   obtenerPeliculas(): Pelicula[] {

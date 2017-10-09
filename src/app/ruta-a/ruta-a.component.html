@@ -1,4 +1,21 @@
-<app-lista-peliculas
-[peliculas]="titulos"
-(botonElininarPulsado)="eliminarPelicula($event)">
-</app-lista-peliculas>
+<div class="row">
+  <div class="six columns">
+      <app-lista-peliculas
+      [peliculas]="titulos"
+      (peliculaSeleccionada)="verDetalles($event)"
+      (botonElininarPulsado)="eliminarPelicula($event)">
+      </app-lista-peliculas>
+  </div>
+  <div class="six columns">
+      <app-detalles-pelicula
+      [pelicula]="peliculaSeleccionada">
+    </app-detalles-pelicula>
+  </div>
+</div>
+
+
+
+
+
+
+

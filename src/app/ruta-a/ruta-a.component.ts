@@ -10,6 +10,7 @@ import { PeliculasService } from '../peliculas.service';
 export class RutaAComponent implements OnInit {
 
   titulos: Pelicula[];
+  peliculaSeleccionada: Pelicula;
 
   constructor(private _peliculasService: PeliculasService) { }
 
@@ -22,4 +23,7 @@ export class RutaAComponent implements OnInit {
     this.titulos = this._peliculasService.obtenerPeliculas();
   }
 
+  verDetalles(titulo: Pelicula): void {
+    this.peliculaSeleccionada = titulo;
+  }
 }

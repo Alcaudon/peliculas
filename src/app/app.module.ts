@@ -10,13 +10,15 @@ import { FormularioPeliculaComponent } from './formulario-pelicula/formulario-pe
 import { AppRoutingModule } from './app-routing/app-routing.module';
 import { RutaAComponent } from './ruta-a/ruta-a.component';
 import { RutaBComponent } from './ruta-b/ruta-b.component';
+import { DetallesPeliculaComponent } from './detalles-pelicula/detalles-pelicula.component';
 @NgModule({
   declarations: [
     AppComponent,
     ListaPeliculasComponent,
     FormularioPeliculaComponent,
     RutaAComponent,
-    RutaBComponent
+    RutaBComponent,
+    DetallesPeliculaComponent
   ],
   imports: [
     BrowserModule,
