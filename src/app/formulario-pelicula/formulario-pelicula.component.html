@@ -1,18 +1,26 @@
-<form
-  [formGroup]='formulario'
-  (ngSubmit)='notificarGuardadoPelicula()'>
-  <div>
-    <label for="">Titulo</label>
-    <input type="text" formControlName='titulo'>
+<form [formGroup]='formulario' (ngSubmit)='notificarGuardadoPelicula()'>
+
+  <div class="row">
+    <div class="offset-by-three six columns">
+      <label for="">Titulo</label>
+      <input type="text" formControlName='titulo' class="u-full-width">
+      <span *ngIf="formulario.get('titulo').touched && formulario.get('titulo').invalid">
+        El título de la película es obligatorio</span>
+    </div>
   </div>
-  <span *ngIf="formulario.get('titulo').touched && formulario.get('titulo').invalid">
-    El título de la película es obligatorio
-  </span>
-  <div>
-    <label for="">Director</label>
-    <input type="text" formControlName='director'>
+
+
+  <div class="row">
+    <div class="offset-by-three six columns">
+      <label for="">Director</label>
+      <input type="text" formControlName='director' class="u-full-width">
+    </div>
   </div>
-  <div>
-    <button type='submit' [disabled]='formulario.invalid'>Guardar Película</button>
+
+  <div class="row">
+    <div class="offset-by-three six columns">
+      <button type='submit' [disabled]='formulario.invalid' class="u-full-width button-primary">Guardar Película</button>
+    </div>
   </div>
+
 </form>

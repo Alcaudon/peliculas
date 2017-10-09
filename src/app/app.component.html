@@ -1,17 +1,19 @@
-<header>
-  <h1>{{ title }}</h1>
-</header>
+<div class="container">
+  <header>
+    <h1>{{ title }}</h1>
+  </header>
 
-<nav>
-  <ul>
-    <li>
-      <a routerLink="/lista-peliculas"> Mis peliculas </a>
-    </li>
-    <li>
-      <a routerLink="/nueva-pelicula"> Nueva película</a>
-    </li>
-  </ul>
-</nav>
-<router-outlet></router-outlet>
-
-
+  <nav>
+    <ul>
+      <li>
+        <a routerLink="/lista-peliculas"
+           routerLinkActive="seleccionada"> Mis peliculas </a>
+      </li>
+      <li>
+        <a routerLink="/nueva-pelicula"
+           routerLinkActive="seleccionada"> Nueva película</a>
+      </li>
+    </ul>
+  </nav>
+  <router-outlet></router-outlet>
+</div>
