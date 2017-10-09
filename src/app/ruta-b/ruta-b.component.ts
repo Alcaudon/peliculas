@@ -17,8 +17,9 @@ export class RutaBComponent {
   ) { }
 
   crearPelicula(pelicula: Pelicula): void {
-    this._peliculasService.agregarPelicula(pelicula);
-    this._router.navigate(['/lista-peliculas']);
+    this._peliculasService
+    .agregarPelicula(pelicula)
+    .subscribe(()=>this._router.navigate(['/lista-peliculas'] ));
   }
 
 }

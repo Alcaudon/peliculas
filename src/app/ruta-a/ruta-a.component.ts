@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Pelicula} from '../pelicula';
 import { PeliculasService } from '../peliculas.service';
+import {Observable} from 'rxjs/Observable';
 
 @Component({
   selector: 'app-ruta-a',
@@ -9,18 +10,18 @@ import { PeliculasService } from '../peliculas.service';
 })
 export class RutaAComponent implements OnInit {
 
-  titulos: Pelicula[];
+  peliculas$: Observable<Pelicula[]>;
   peliculaSeleccionada: Pelicula;
 
   constructor(private _peliculasService: PeliculasService) { }
 
   ngOnInit(): void {
-    this.titulos = this._peliculasService.obtenerPeliculas();
+    this.peliculas$ = this._peliculasService.obtenerPeliculas();
   }
 
   eliminarPelicula(titulo: Pelicula): void {
     this._peliculasService.eliminarPelicula(titulo);
-    this.titulos = this._peliculasService.obtenerPeliculas();
+    //this.titulos = this._peliculasService.obtenerPeliculas();
   }
 
   verDetalles(titulo: Pelicula): void {

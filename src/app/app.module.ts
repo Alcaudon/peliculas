@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
+import {HttpClientModule} from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { ListaPeliculasComponent } from './lista-peliculas/lista-peliculas.component';
@@ -23,7 +24,9 @@ import { DetallesPeliculaComponent } from './detalles-pelicula/detalles-pelicula
   imports: [
     BrowserModule,
     ReactiveFormsModule,
-    AppRoutingModule
+    HttpClientModule,
+    AppRoutingModule,
+
   ],
   providers: [PeliculasService],
   bootstrap: [AppComponent]

@@ -1,0 +1,39 @@
+{
+  "peliculas": [
+    {
+      "id": 1,
+      "titulo": "Mad Max - Fury Road",
+      "director": "George Miller"
+    },
+    {
+      "id": 2,
+      "titulo": "El padrino II",
+      "director": "Francis Ford Coppola"
+    },
+    {
+      "id": 3,
+      "titulo": "Cantando bajo la lluvia",
+      "director": "Gene Kelly y Stanley Donen"
+    },
+    {
+      "id": 4,
+      "titulo": "Los Vengadores",
+      "director": "Josh Wedon"
+    },
+    {
+      "id": 5,
+      "titulo": "Guardianes de la Galaxia",
+      "director": "James Gunn"
+    },
+    {
+      "id": 6,
+      "titulo": "Spiderman HomeComing",
+      "director": "Jon Watts"
+    },
+    {
+      "titulo": "Tiburón",
+      "director": "Steven Spielberg",
+      "id": 7
+    }
+  ]
+}

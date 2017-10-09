@@ -1,30 +1,25 @@
 import { PercentPipe } from '@angular/common/src/pipes/number_pipe';
 import { Injectable } from '@angular/core';
 import {Pelicula} from './pelicula';
+import {HttpClient} from '@angular/common/http';
+import {Observable} from 'rxjs/Observable';
+import {environment} from '../environments/environment'
 
 @Injectable()
 export class PeliculasService {
 
-  private _titulos: Pelicula[] = [
-    new Pelicula (1, 'Mad Max - Fury Road', 'George Miller'),
-    new Pelicula (2, 'El padrino II', 'Francis Ford Coppola'),
-    new Pelicula (3, 'Cantando bajo la lluvia', 'Gene Kelly y Stanley Donen'),
-    new Pelicula (4, 'Los Vengadores', 'Josh Wedon'),
-    new Pelicula (5, 'Guardianes de la Galaxia', 'James Gunn'),
-    new Pelicula (6, 'Spiderman HomeComing','Jon Watts')
-  ];
+  constructor(private _httpClient: HttpClient){}
 
-  obtenerPeliculas(): Pelicula[] {
-    return this._titulos;
+
+  obtenerPeliculas(): Observable<Pelicula[]> {
+    return this._httpClient.get<Pelicula[]>(`${environment.rutaApi}/peliculas`);
   }
 
-  agregarPelicula(pelicula: Pelicula): void {
-    this._titulos.push(pelicula);
+  agregarPelicula(pelicula: Pelicula): Observable<Pelicula> {
+    return this._httpClient.post<Pelicula>(`${environment.rutaApi}/peliculas`, pelicula);
   }
 
-  eliminarPelicula(titulo: Pelicula): void {
-    this._titulos = this._titulos.filter(function(n) {
-      return n.id !== titulo.id;
-    });
+  eliminarPelicula(pelicula: Pelicula):  Observable<Pelicula> {
+    return this._httpClient.delete<Pelicula>(`${environment.rutaApi}/peliculas/${pelicula.id}`);
   }
 }
