@@ -8,7 +8,10 @@
   </div>
   <div class="six columns">
       <app-detalles-pelicula
-      [pelicula]="peliculaSeleccionada">
+      [pelicula]="peliculaSeleccionada"
+      (botonYoutubePulsado)="verTrailer($event)"
+      (botonIMDBPulsado)="verDatos($event)"
+      >
     </app-detalles-pelicula>
   </div>
 </div>

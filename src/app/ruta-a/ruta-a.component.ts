@@ -27,4 +27,13 @@ export class RutaAComponent implements OnInit {
   verDetalles(titulo: Pelicula): void {
     this.peliculaSeleccionada = titulo;
   }
+
+  verTrailer(ruta: string): void {
+    window.open(ruta, '_blank');
+  }
+  verDatos(ruta: string): void {
+    window.open(ruta, '_blank');
+  }
+
+
 }

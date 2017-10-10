@@ -3,7 +3,9 @@
     {
       "id": 1,
       "titulo": "Mad Max - Fury Road",
-      "director": "George Miller"
+      "director": "George Miller",
+      "youtube": "GvsFoGIuRX4",
+      "imdb": "tt1392190"
     },
     {
       "id": 2,

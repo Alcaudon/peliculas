@@ -1,10 +1,7 @@
-export class Pelicula {
-
-    constructor(
-      public id: number,
-      public titulo: string,
-      public director?: string,
-      public resumen?: string,
-      public imagen?: string
-    ) {}
+export interface Pelicula {
+       id: number;
+       titulo: string;
+       director?: string;
+       youtube?: string;
+       imdb?: string;
 }
