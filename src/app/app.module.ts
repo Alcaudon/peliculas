@@ -12,6 +12,7 @@ import { AppRoutingModule } from './app-routing/app-routing.module';
 import { RutaAComponent } from './ruta-a/ruta-a.component';
 import { RutaBComponent } from './ruta-b/ruta-b.component';
 import { DetallesPeliculaComponent } from './detalles-pelicula/detalles-pelicula.component';
+import { OrdenarPeliculasPipe } from './ordenar-peliculas.pipe';
 @NgModule({
   declarations: [
     AppComponent,
@@ -19,7 +20,8 @@ import { DetallesPeliculaComponent } from './detalles-pelicula/detalles-pelicula
     FormularioPeliculaComponent,
     RutaAComponent,
     RutaBComponent,
-    DetallesPeliculaComponent
+    DetallesPeliculaComponent,
+    OrdenarPeliculasPipe
   ],
   imports: [
     BrowserModule,

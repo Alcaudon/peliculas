@@ -7,6 +7,8 @@ import {Pelicula} from '../pelicula';
 })
 export class ListaPeliculasComponent  {
 
+  orden: string = 'asc';
+
  @Output() botonElininarPulsado = new EventEmitter <Pelicula> ();
  @Output() peliculaSeleccionada = new EventEmitter <Pelicula> ();
 
@@ -18,5 +20,9 @@ export class ListaPeliculasComponent  {
 
  notificarSeleccionPelicula(pelicula: Pelicula):void{
     this.peliculaSeleccionada.emit(pelicula);
+ }
+
+ cambiarOrden(): void {
+    this.orden = this.orden ==='asc' ? 'desc' : 'asc';
  }
 }
