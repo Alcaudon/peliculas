@@ -36,6 +36,18 @@
       "titulo": "Tiburón",
       "director": "Steven Spielberg",
       "id": 7
+    },
+    {
+      "titulo": "Star Wars",
+      "director": "George Lucas",
+      "id": 8
+    },
+    {
+      "titulo": "El planeta de los simios",
+      "director": "Tim Burton",
+      "youtube": "",
+      "imdb": "tt0133152",
+      "id": 9
     }
   ]
 }
