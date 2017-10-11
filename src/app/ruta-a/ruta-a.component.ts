@@ -19,9 +19,15 @@ export class RutaAComponent implements OnInit {
     this.peliculas$ = this._peliculasService.obtenerPeliculas();
   }
 
-  eliminarPelicula(titulo: Pelicula): void {
-    this._peliculasService.eliminarPelicula(titulo);
-    //this.titulos = this._peliculasService.obtenerPeliculas();
+  eliminarPelicula(pelicula: Pelicula): void {
+    this._peliculasService
+    .eliminarPelicula(pelicula)
+    .subscribe(() => {
+      this.peliculas$ = this._peliculasService.obtenerPeliculas();
+      this.peliculaSeleccionada =null;
+
+    });
+
   }
 
   verDetalles(titulo: Pelicula): void {

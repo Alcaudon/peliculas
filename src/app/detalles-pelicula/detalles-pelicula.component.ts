@@ -10,6 +10,7 @@ export class DetallesPeliculaComponent {
  @Input() pelicula: Pelicula;
  @Output() botonYoutubePulsado = new EventEmitter<string>();
  @Output() botonIMDBPulsado = new EventEmitter<string>();
+ @Output() botonElininarPulsado = new EventEmitter <Pelicula> ();
 
  notificarNavegacionYoutube(): void {
     this.botonYoutubePulsado.emit(this.contruirRutaYoutube());
@@ -30,4 +31,9 @@ return this.pelicula.imdb
 ?`http://www.imdb.com/title/${this.pelicula.imdb}`
 : null;
 }
+
+notificarEliminacionPelicula(): void {
+  this.botonElininarPulsado.emit(this.pelicula);
+}
+
 }

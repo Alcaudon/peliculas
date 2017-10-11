@@ -2,8 +2,7 @@
   <div class="six columns">
       <app-lista-peliculas
       [peliculas]="peliculas$ | async"
-      (peliculaSeleccionada)="verDetalles($event)"
-      (botonElininarPulsado)="eliminarPelicula($event)">
+      (peliculaSeleccionada)="verDetalles($event)">
       </app-lista-peliculas>
   </div>
   <div class="six columns">
@@ -11,6 +10,7 @@
       [pelicula]="peliculaSeleccionada"
       (botonYoutubePulsado)="verTrailer($event)"
       (botonIMDBPulsado)="verDatos($event)"
+      (botonElininarPulsado)="eliminarPelicula($event)"
       >
     </app-detalles-pelicula>
   </div>

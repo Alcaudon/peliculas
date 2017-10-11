@@ -10,9 +10,6 @@
   <li *ngFor="let pelicula of peliculas | ordenarPeliculas:orden "
    (click)="notificarSeleccionPelicula(pelicula)">
     {{ pelicula.titulo }}
-    <button (click)="notificarEliminacionPelicula(pelicula)">
-        <i class="fa fa-trash-o" aria-hidden="true"></i>
-    </button>
   </li>
 </ul>
 

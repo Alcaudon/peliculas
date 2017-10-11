@@ -18,7 +18,9 @@ export class FormularioPeliculaComponent  {
    private crearFormulario(): void {
     this.formulario = this._formBuilder.group({
       titulo: ['', Validators.required],
-      director: ''
+      director: '',
+      youtube: '',
+      imdb: ''
     });
    }
 
